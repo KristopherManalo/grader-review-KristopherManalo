@@ -12,5 +12,5 @@ fi
 
 echo 'Finished cloning'
 
-javac student-submission/*.java
-java org.junit.runner.JUnitCore student-submission/TestListExamples
+javac -cp $CPATH student-submission/*.java
+java -cp $CPATH org.junit.runner.JUnitCore student-submission/TestListExamples
