@@ -12,5 +12,5 @@ fi
 
 echo 'Finished cloning'
 
-javac -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar student-submission/*.java
-java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar  org.junit.runner.JUnitCore student-submissionTestListExamples
+javac student-submission/*.java
+java org.junit.runner.JUnitCore student-submission/TestListExamples
