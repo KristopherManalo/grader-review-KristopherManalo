@@ -24,10 +24,15 @@ fi
 
 javac -cp ";lib/hamcrest-core-1.3.jar;lib/junit-4.13.2.jar" TestListExamples.java
 java -cp ";lib/hamcrest-core-1.3.jar;lib/junit-4.13.2.jar" org.junit.runner.JUnitCore TestListExamples > Error.txt
-cat Error.txt
 
-grep -m 1 "testMergeRightEnd" Error.txt > Output.txt
+if grep -wq "OK" Error.txt
+then
+    echo 'OK all tests passed: 100%'
+    exit
+fi
 
-echo 'Begin output'
+grep -m 1 "Tests run:" Error.txt > Output.txt
+echo "Tests Failed:" >> Output.txt
+grep -m 1 -w "TestListExamples" Error.txt >> Output.txt
 
 cat Output.txt
