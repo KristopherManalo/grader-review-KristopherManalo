@@ -9,6 +9,7 @@ then
     cp ./TestListExamples.java student-submission/
     cp -r lib student-submission/
 else
+    echo 'File does not have right name/exist or wrong directory'
     exit
 fi
 
